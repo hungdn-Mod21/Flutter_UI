@@ -17,11 +17,13 @@ class _HomeState extends State<Home> {
         child: Container(
           child: Column(
             children: [
+              // -------------------------- APPBAR -----------------------------
               Padding(
                 // kiểu lề LTRB
                 padding: const EdgeInsets.fromLTRB(25, 25, 25, 0),
                 child: Row(
                   children: [
+                    // Drawer
                     Image.asset(
                       "images/menuicon.png",
                       height: 25,
@@ -29,10 +31,12 @@ class _HomeState extends State<Home> {
                     Expanded(
                       child: Container(),
                     ),
+                    // Search
                     FaIcon(FontAwesomeIcons.search),
                     SizedBox(
                       width: 25,
                     ),
+                    // Bag
                     Image.asset(
                       'images/shopping-bag-outline.png',
                       height: 25,
@@ -40,6 +44,7 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
+              // --------------------- Trending --------------------------------
               Padding(
                 padding: const EdgeInsets.all(25.0),
                 child: Row(
@@ -58,15 +63,20 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
+              //--------------------------- Contents ---------------------------
               Expanded(
                 child: Container(
-                  padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
+                  padding: EdgeInsets.fromLTRB(25, 0, 10, 0),
+                  // List products
                   child: GridView.builder(
+                      // chỉnh lưới
+                      // SliverGridDelegateWithFixedCrossAxisCount :Đại biểu lưới cúi với số lượng trục chéo cố định Đại biểu lưới cúi với số lượng trục chéo cố định
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          mainAxisSpacing: 10,
-                          crossAxisSpacing: 20,
-                          childAspectRatio: 0.73),
+                        crossAxisCount: 2, // cột/hàng
+                        mainAxisSpacing: 20, // k/cách hàng
+                        crossAxisSpacing: 70, // k/cách cột
+                        childAspectRatio: 0.75, // tỷ lệ khung hình
+                      ),
                       itemCount: 4,
                       itemBuilder: (context, index) {
                         return GestureDetector(
@@ -81,16 +91,20 @@ class _HomeState extends State<Home> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+                              // ------------------- Images --------------------
                               Expanded(
                                 child: Container(
-                                  width: double.maxFinite,
+                                  width: double.maxFinite, // độ rộng hữu hạn
                                   decoration: BoxDecoration(
-                                    color: Color(data[index]['color']),
+                                    color:
+                                        Color(data[index]['color']), // màu nền
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   child: Center(
+                                    // Chèn img
                                     child: Stack(
                                       children: [
+                                        // Hình tròn
                                         Padding(
                                           padding: const EdgeInsets.all(8.0),
                                           child: CircleAvatar(
@@ -98,6 +112,7 @@ class _HomeState extends State<Home> {
                                             backgroundColor: Colors.white,
                                           ),
                                         ),
+                                        // Độ mờ cho hình tròn
                                         Padding(
                                           padding: const EdgeInsets.all(8.0),
                                           child: CircleAvatar(
@@ -107,6 +122,7 @@ class _HomeState extends State<Home> {
                                                     .withOpacity(0.5),
                                           ),
                                         ),
+                                        // Img products
                                         Image.network(
                                           data[index]['image'],
                                           height: 160,
@@ -116,6 +132,7 @@ class _HomeState extends State<Home> {
                                   ),
                                 ),
                               ),
+                              // --------------- Name and price ----------------
                               Text(data[index]['name'],
                                   style: TextStyle(
                                       fontSize: 20,

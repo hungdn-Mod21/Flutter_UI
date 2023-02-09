@@ -23,17 +23,20 @@ class _ItemState extends State<Item> {
                   decoration: BoxDecoration(
                     color: Color(0xffbccaca),
                     borderRadius: BorderRadius.only(
+                      // bo viền 1 góc
                       bottomLeft: Radius.circular(50),
                     ),
                   ),
                   child: Row(
                     children: [
-                      // -------------------- IMAGE
+                      // ------- IMAGE
                       Expanded(
                         child: Container(
                           child: Center(
+                            // xếp chèn
                             child: Stack(
                               children: [
+                                // Hình tròn
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: CircleAvatar(
@@ -41,6 +44,7 @@ class _ItemState extends State<Item> {
                                     backgroundColor: Colors.white,
                                   ),
                                 ),
+                                // màu nền hình tròn
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: CircleAvatar(
@@ -49,6 +53,7 @@ class _ItemState extends State<Item> {
                                         Color(0xffbccaca).withOpacity(0.5),
                                   ),
                                 ),
+                                // ảnh products
                                 Image.network(
                                   'https://cdn.accentuate.io/31823129542702/11366956630062/StoJo_200206_Product-68488-v1584383135067.png?936x1160',
                                   height: 200,
@@ -57,19 +62,19 @@ class _ItemState extends State<Item> {
                             ),
                           ),
                         ),
-                        // ty le 6 phan
-                        flex: 6,
+                        flex: 6, // tỷ lệ 6 phần
                       ),
-                      // ----------------- COLORS and FAVORITE
+                      // -------------- CHOSES COLORS and FAVORITE -------------
                       Expanded(
-                        flex: 1,
+                        flex: 1, // tỷ lệ 1 phần
                         child: Container(
-                          color: Color(0xff9db1b1),
+                          color: Color(0xff9db1b1), // màu nền
                           child: Padding(
                             padding: const EdgeInsets.all(22.0),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
+                                // ------- Img BAG
                                 Image.asset(
                                   'images/shopping-bag-outline.png',
                                   color: Colors.white,
@@ -78,19 +83,23 @@ class _ItemState extends State<Item> {
                                 SizedBox(
                                   height: 20,
                                 ),
+                                // ------- Chọn màu
                                 Container(
                                   height: 200,
                                   child: ListView.builder(
                                       itemCount: data.length,
-                                      scrollDirection: Axis.vertical,
+                                      scrollDirection:
+                                          Axis.vertical, // xếp theo chiều dọc
                                       itemBuilder: (context, index) {
-                                        return index == 2
+                                        return index ==
+                                                2 // nếu ở vị trí index = 2
                                             ? Padding(
                                                 padding:
                                                     const EdgeInsets.all(2.0),
                                                 child: CircleAvatar(
                                                   radius: 12,
-                                                  backgroundColor: Colors.white,
+                                                  backgroundColor:
+                                                      Colors.white, // màu viền
                                                   child: CircleAvatar(
                                                     radius: 2,
                                                     backgroundColor: Color(
@@ -109,6 +118,7 @@ class _ItemState extends State<Item> {
                                               );
                                       }),
                                 ),
+                                // -------- Icon favorite
                                 Icon(
                                   Icons.favorite_border,
                                   color: Colors.white,
@@ -121,7 +131,7 @@ class _ItemState extends State<Item> {
                     ],
                   ),
                 ),
-                // ----------- Button Back
+                // ---------------------- Button Back --------------------------
                 Positioned(
                     top: 30,
                     left: 10,
@@ -139,6 +149,7 @@ class _ItemState extends State<Item> {
             SizedBox(
               height: 15,
             ),
+            // ---------------------------- List Contents ----------------------
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Column(
@@ -212,6 +223,7 @@ class _ItemState extends State<Item> {
                 style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
               ),
             ),
+            // ----------------------- List Size -------------------------------
             Container(
               padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
               height: 90,
@@ -222,7 +234,8 @@ class _ItemState extends State<Item> {
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
-                        padding: EdgeInsets.all((index + 1) * 7.0),
+                        padding: EdgeInsets.all(
+                            (index + 1) * 7.0), // chỉnh kích cỡ item list
                         width: 130,
                         child: Image.network(
                           'https://cdn.accentuate.io/31823129542702/11366956630062/StoJo_200206_Product-68488-v1584383135067.png?936x1160',
@@ -235,6 +248,7 @@ class _ItemState extends State<Item> {
                   }),
             ),
             Expanded(child: Container()),
+            // ---------------------- Price and Button Add to Cart -------------
             Row(
               children: [
                 Expanded(
