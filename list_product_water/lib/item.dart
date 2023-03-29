@@ -19,7 +19,7 @@ class _ItemState extends State<Item> {
             Stack(
               children: [
                 Container(
-                  height: MediaQuery.of(context).size.height / 1.9,
+                  height: MediaQuery.of(context).size.height / 1.9, 
                   decoration: BoxDecoration(
                     color: Color(0xffbccaca),
                     borderRadius: BorderRadius.only(
