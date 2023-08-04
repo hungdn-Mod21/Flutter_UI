@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         // Màu nền
         scaffoldBackgroundColor: Color(0xffE9EFF3),
         // Theme for Input TextField
-        inputDecorationTheme: InputDecorationTheme(
+        inputDecorationTheme: const InputDecorationTheme(
           filled: true, // cho phép chỉnh sửa thuộc tính
           fillColor: Colors.white, // màu nền TextField
           hoverColor: Colors.white, // màu khi hover

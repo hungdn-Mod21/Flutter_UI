@@ -198,7 +198,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                                   padding: EdgeInsets.all(5.0),
                                   width: 70.0,
                                   decoration: BoxDecoration(
-                                    color: Theme.of(context).accentColor,
+                                    color: Theme.of(context).hintColor,
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
                                   alignment: Alignment.center,
@@ -211,7 +211,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                                   padding: EdgeInsets.all(5.0),
                                   width: 70.0,
                                   decoration: BoxDecoration(
-                                    color: Theme.of(context).accentColor,
+                                    color: Theme.of(context).hintColor,
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
                                   alignment: Alignment.center,
